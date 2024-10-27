@@ -1,0 +1,20 @@
+{
+  "name": "aws-bedrock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "prettier": "3.0.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.427.0",
+    "aws-sdk": "^2.1472.0"
+  }
+}

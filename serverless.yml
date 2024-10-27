@@ -1,0 +1,30 @@
+service: aws-bedrock-ts
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 30
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - 'bedrock:InvokeModel'
+          Resource: '*'
+
+functions:
+  bedrockText:
+    handler: src/bedrock/text.handler
+    name: 'aws-bedrock-text'
+    events:
+      - httpApi:
+          path: /bedrock/text
+          method: post
+  bedrockImage:
+    handler: src/bedrock/image.handler
+    name: 'aws-bedrock-image'
+    events:
+      - httpApi:
+          path: /bedrock/image
+          method: post
